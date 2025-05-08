@@ -26,10 +26,7 @@ function App(): React.JSX.Element {
     setIsUpdating(true);
     hotUpdate.git.checkForGitUpdate({
       branch: 'main',
-      bundlePath: Platform.select({
-        ios: 'output/main.jsbundle',
-        android: 'index.android.bundle',
-      }),
+      bundlePath: './android/output/index.android.bundle',
       url: 'https://github.com/JuhilGajera12/OTA_Updates.git',
       onCloneFailed(msg: string) {
         setIsUpdating(false);
