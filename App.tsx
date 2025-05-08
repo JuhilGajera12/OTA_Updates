@@ -45,7 +45,7 @@ function App(): React.JSX.Element {
             [
               {
                 text: 'OK',
-                onPress: () => hotUpdate.resetApp(),
+                onPress: () => hotUpdate?.resetApp(),
               },
               {
                 text: 'Cancel',
@@ -68,7 +68,7 @@ function App(): React.JSX.Element {
           Alert.alert('Pull project success!', 'Restart to apply the changes', [
             {
               text: 'OK',
-              onPress: () => hotUpdate.resetApp(),
+              onPress: () => hotUpdate?.resetApp(),
             },
             {
               text: 'Cancel',
@@ -82,7 +82,7 @@ function App(): React.JSX.Element {
           setPercent(getpercent);
         },
         onFinishProgress() {
-          console.log('onFinishProgress');
+          Alert.alert('onFinishProgress');
         },
       });
     };
@@ -99,7 +99,7 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <Text style={{fontSize: 22, color: 'white'}}>MAGAN</Text>
+      <Text style={{fontSize: 22, color: 'white'}}>Karshan</Text>
       <Text style={{fontSize: 22, color: 'white'}}>{percent}</Text>
     </View>
   );
