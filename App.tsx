@@ -8,6 +8,7 @@ import {
   useColorScheme,
   View,
   AppState,
+  Image,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import hotUpdate from 'react-native-ota-hot-update';
@@ -49,7 +50,10 @@ function App(): React.JSX.Element {
                   hotUpdate?.resetApp();
                 } catch (error) {
                   console.error('Reset failed:', error);
-                  Alert.alert('Error', 'Failed to restart. Please restart the app manually.');
+                  Alert.alert(
+                    'Error',
+                    'Failed to restart. Please restart the app manually.',
+                  );
                 }
               },
             },
@@ -82,7 +86,10 @@ function App(): React.JSX.Element {
                   hotUpdate?.resetApp();
                 } catch (error) {
                   console.error('Reset failed:', error);
-                  Alert.alert('Error', 'Failed to restart. Please restart the app manually.');
+                  Alert.alert(
+                    'Error',
+                    'Failed to restart. Please restart the app manually.',
+                  );
                 }
               },
             },
@@ -130,12 +137,13 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <Text style={{fontSize: 22, color: isDarkMode ? 'white' : 'black'}}>Karshan</Text>
-      {isUpdating && (
-        <Text style={{fontSize: 16, color: isDarkMode ? 'white' : 'black'}}>
-          Downloading update: {Math.round(percent)}%
-        </Text>
-      )}
+      <Text style={{fontSize: 22, color: isDarkMode ? 'white' : 'black'}}>
+        Karshan
+      </Text>
+      <Image
+        source={require('./assets/1.png')}
+        style={{height: 100, width: 100, alignSelf: 'center'}}
+      />
     </View>
   );
 }
