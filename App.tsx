@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Alert,
   LayoutAnimation,
@@ -17,6 +17,8 @@ function App(): React.JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  const [percent, setPercent] = useState<number>(0);
 
   useEffect(() => {
     const onCheckGitVersion = () => {
@@ -76,15 +78,15 @@ function App(): React.JSX.Element {
           ]);
         },
         onProgress(received: number, total: number) {
-          const percent = (+received / +total) * 100;
-          LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+          const getpercent = (+received / +total) * 100;
+          setPercent(getpercent);
         },
         onFinishProgress() {
           console.log('onFinishProgress');
         },
       });
     };
-    onCheckGitVersion()
+    onCheckGitVersion();
   }, []);
 
   return (
@@ -97,7 +99,8 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <Text style={{fontSize: 22, color: 'white'}}>Karshan</Text>
+      <Text style={{fontSize: 22, color: 'white'}}>MAGAN</Text>
+      <Text style={{fontSize: 22, color: 'white'}}>{percent}</Text>
     </View>
   );
 }
