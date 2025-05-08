@@ -130,7 +130,7 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <Text style={{fontSize: 22, color: isDarkMode ? 'white' : 'black'}}>Magan</Text>
+      <Text style={{fontSize: 22, color: isDarkMode ? 'white' : 'black'}}>Karshan</Text>
       {isUpdating && (
         <Text style={{fontSize: 16, color: isDarkMode ? 'white' : 'black'}}>
           Downloading update: {Math.round(percent)}%
