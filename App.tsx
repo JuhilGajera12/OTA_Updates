@@ -99,7 +99,7 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <Text style={{fontSize: 22, color: 'white'}}>Karshan</Text>
+      <Text style={{fontSize: 22, color: 'white'}}>Magan</Text>
       <Text style={{fontSize: 22, color: 'white'}}>{percent}</Text>
     </View>
   );
